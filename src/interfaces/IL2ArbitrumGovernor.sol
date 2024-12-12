@@ -16,4 +16,11 @@ interface IL2ArbitrumGoverner {
     function owner() external view returns (address);
     function proposalThreshold() external view returns (uint256);
     function setProposalThreshold(uint256 newProposalThreshold) external;
+    function proposalProposer(uint256 proposalId) external view returns (address);
+    function cancel(
+        address[] memory targets,
+        uint256[] memory values,
+        bytes[] memory calldatas,
+        bytes32 descriptionHash
+    ) external;
 }
